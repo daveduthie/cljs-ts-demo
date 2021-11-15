@@ -1,15 +1,12 @@
 (ns ^:figwheel-load hello-world.main
-  (:require
-   [cljs.loader :as loader]
-   [clojure.core.async :as a :refer [<! go]]
-   [clojure.core.async.interop :refer-macros [<p!]]
-   [clojure.pprint :as pprint]
-   [goog.dom :as gdom]
-   [helix.core :refer [$ defnc]]
-   [helix.dom :as d]
-   [helix.hooks :as hooks]
-   [libhunam :refer [fun] :rename {fun libhunam-fun}]
-   [react-dom :as rdom]))
+  (:require [cljs.loader :as loader]
+            [clojure.pprint :as pprint]
+            [goog.dom :as gdom]
+            [helix.core :refer [$ defnc]]
+            [helix.dom :as d]
+            [helix.hooks :as hooks]
+            [libhunam :refer [fun] :rename {fun libhunam-fun}]
+            [react-dom :as rdom]))
 
 (enable-console-print!)
 
