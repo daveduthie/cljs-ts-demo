@@ -1,6 +1,5 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
-const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 
 module.exports = {
   mode: "development",
@@ -41,10 +40,6 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [{ from: "./target/public/cljs-out/dev", to: "." }],
-    }),
-    new WasmPackPlugin({
-      crateDirectory: path.resolve(__dirname, "../mustache"),
-      extraArgs: "-- --features console_error_panic_hook",
     }),
   ],
   devtool: "inline-source-map",

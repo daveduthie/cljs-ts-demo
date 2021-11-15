@@ -9,51 +9,14 @@
    [helix.dom :as d]
    [helix.hooks :as hooks]
    [libhunam :refer [fun] :rename {fun libhunam-fun}]
-   [mustache-rs]
    [react-dom :as rdom]))
 
 (enable-console-print!)
-
-(defn set-context [ctx] (go (.set-context (<p! mustache-rs) ctx)))
-
-(defn template
-  [str]
-  (-> mustache-rs
-      (.then #(.new (.-Mustache %) str))))
-
-(def mustache-templates
-  ["Hello {{ calc.who }}"
-   "Hello {{ calc.whoElse }} {{ calc.doesnt.resolve.to.anything }}"])
-
-(def initial-context {})
-
-(def calcs {:who (fn [_] "The Whose??"), :whoElse (fn [_] "Elsie")})
-
-(defnc mustache-test []
-  (let [[state setState] (hooks/use-state nil)]
-    (when-not state
-      (go
-       (let [mustaches (<p! (js/Promise.all (map template mustache-templates)))
-             deps      (set (mapcat #(.deps % #js ["calc"]) mustaches))
-             calcs     (reduce (fn [acc dep]
-                                 (let [fun (or (get calcs (keyword dep))
-                                               (constantly nil))]
-                                   (assoc acc dep (fun initial-context))))
-                               {}
-                               deps)
-             ctx       (clj->js (assoc initial-context :calc calcs))]
-         (<! (set-context ctx))
-         (setState (map #(.render %) mustaches)))))
-    (d/ul
-     (doall (map (fn [rendered tpl] (d/li {:key rendered} tpl " => " rendered))
-                 state
-                 mustache-templates)))))
 
 (defnc app []
   (let [[bigComp setBigComp] (hooks/use-state nil)]
     (d/div {:style {:margin "3em"}}
      (d/p "CLJS + TS + Wasm Hello Worlds")
-     ($ mustache-test)
      (d/pre (with-out-str (pprint/pprint {:libhunan/fun (libhunam-fun)})))
      (d/button
       {:on-click (fn [_]

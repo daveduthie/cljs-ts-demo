@@ -2,7 +2,6 @@
   (:require [cljs.loader :as loader]
             [helix.core :refer [$ defnc]]
             [helix.dom :as d]
-            [mustache-rs]
             [libhunam :refer [Comp] :rename {Comp LibhunamComp}]))
 
 (defnc app [_]
