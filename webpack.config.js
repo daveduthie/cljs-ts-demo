@@ -7,7 +7,6 @@ module.exports = {
     main: "./target/public/cljs-out/dev/main.js",
     base: "./target/public/cljs-out/dev/cljs_base.js",
     big: "./target/public/cljs-out/dev/big.js",
-    index: "./src/js/index.js",
   },
   resolve: {
     alias: {
