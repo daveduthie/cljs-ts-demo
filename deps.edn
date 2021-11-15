@@ -1,0 +1,18 @@
+{:paths   ["src/cljs" "resources" "target"]
+ :aliases {:dev { :jvm-opts ["-XX:-OmitStackTraceInFastThrow"
+                             "-Dclojure.main.report=stderr"]}
+           :fig {:main-opts ["-m" "figwheel.main"]}}
+
+ :deps {
+        com.bhauman/figwheel-main       {; broken when modules are used together with a bundle target
+                                         #_#_     :mvn/version "0.2.14"
+                                         #_#_     :local/root  "../../figwheel-main"
+                                         :git/url "https://github.com/daveduthie/figwheel-main.git"
+                                         :sha     "9f45a866174013b86d4ed3c311084adf73291115"
+                                         }
+        com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
+        org.clojure/clojure             {:mvn/version "1.10.3"}
+        org.clojure/core.async          {:mvn/version "1.4.627"}
+        org.clojure/clojurescript       {:mvn/version "1.10.893"}
+        lilactown/helix                 {:mvn/version "0.1.4"}
+        }}

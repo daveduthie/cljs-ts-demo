@@ -1,0 +1,10 @@
+/.clj-kondo/.cache/
+/.cpcache/
+/node_modules/
+/target/
+.nrepl-port
+.rebel_readline_history
+/.log/
+/.lsp/.cache/
+/.lsp/sqlite.db
+/pkg/
