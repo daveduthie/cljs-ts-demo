@@ -30,3 +30,7 @@ negligible, so I've stuck with two processes (figwheel, via =make
 repl=, and webpack, via =make dev=). Webpack also has some nice
 niceties like automatically reloading the page when index.html
 changes, and so on.
+
+* Issues of interest
+
+- https://clojure.atlassian.net/browse/CLJS-3327
