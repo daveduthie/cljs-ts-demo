@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/usr/bin/env sh
 
 for DEP in 'libhunam' 'otherlib'
 do

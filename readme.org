@@ -1,9 +1,10 @@
 * Set up
 
+- ~npm install~
 - ~make repl~
 - (in another terminal) ~make dev~
 
-* Workarounds
+* Hacks
 
 ** [[file:bin/mkcljsdeps][mkcljsdeps]]
 
@@ -21,6 +22,10 @@ considered in this process, which causes the module allocation code to
 choke. (shadow-cljs seems to suffer from the same problem, but the
 error message is better).
 
+** Figwheel fork
+
+Figwheel chokes when specifying the bundle target without a bundle-cmd
+
 ** Webpack
 
 The cljs compiler can run a bundler via the =:bundle-cmd= option. This
@@ -34,3 +39,7 @@ changes, and so on.
 * Issues of interest
 
 - https://clojure.atlassian.net/browse/CLJS-3327
+
+* Investigate
+
+** TODO How to combine code splitting with npm libs
