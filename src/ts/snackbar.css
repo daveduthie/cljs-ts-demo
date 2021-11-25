@@ -1,0 +1,33 @@
+.snackbar-notification.green { 
+  background-color: #E8FFFA;
+}
+
+.snackbar-notification.red { 
+  background-color: #ff787566;
+}
+
+.snackbar-notification_image { 
+  object-fit: contain;
+  padding: 12px;
+}
+
+.snackbar-notification_copy p { 
+  padding: 8px 0px 8px 0;
+  line-height: 24px;
+  color: #04464F;
+  font-weight: bold;
+  margin: 0;
+}
+
+.snackbar-notification_container { 
+  display: flex;
+  align-items: center;
+  padding: 0px 6px 0px 7px;
+}
+
+.snackbar-notification {
+  border-radius: 4px;
+  min-height: 64px;
+  display: flex;
+  justify-content: flex-start;
+}

@@ -5,7 +5,7 @@
             [helix.core :refer [$ defnc]]
             [helix.dom :as d]
             [helix.hooks :as hooks]
-            [libhunam :refer [Comp fun] :rename {fun libhunam-fun, Comp LibhunamComp}]
+            [libhunam :refer [Comp fun SnackBarNotification] :rename {fun libhunam-fun, Comp LibhunamComp, SnackBarNotification hunamSnackBar}]
             [react-dom :as rdom]))
 
 (enable-console-print!)
@@ -16,6 +16,7 @@
      (d/p "CLJS + TS + Wasm Hello Worlds")
      (d/pre (with-out-str (pprint/pprint {:libhunan/fun (libhunam-fun)})))
      ($ LibhunamComp {:msg "hello"})
+     ($ hunamSnackBar {:copy "We’ve just sent you an email to reset your password!" :theme "green"})
      (d/button
       {:on-click (fn [_]
                    (when-not (some? bigComp)

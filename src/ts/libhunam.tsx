@@ -1,7 +1,9 @@
 import "antd/dist/antd.css";
+import "./snackbar.css";
 import { DatePicker, message } from "antd";
 import React, { useState } from "react";
 import moment, { Moment } from "moment";
+import {SnackBarNotificationProps} from "./input.types";
 
 export const Comp = ({ msg }: { msg: string }) => {
   const [date, setDate] = useState(moment());
@@ -22,4 +24,19 @@ export const Comp = ({ msg }: { msg: string }) => {
   );
 };
 
-export const fun = () => 2;
+export const fun = () => 2 + 5;
+
+export const SnackBarNotification = ({copy, theme}: SnackBarNotificationProps)  => {
+  const imageSrc = theme === 'green' ? require('./images/bell.png') : require('./images/alert-circle.png');
+  return (
+      <div className={`snackbar-notification ${theme}`}>
+        
+        <div className="snackbar-notification_container">
+          <img src={imageSrc} alt="notification" className="snackbar-notification_image" />
+          <div className="snackbar-notification_copy">
+            <p>{copy}</p>
+          </div>
+        </div>
+      </div>
+  );
+}

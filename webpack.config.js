@@ -16,6 +16,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg|gif|svg|ico)$/i,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 40000,
+            name: "[name].[ext]",
+            esModule: false,
+          },
+        },
+      },
+      {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
