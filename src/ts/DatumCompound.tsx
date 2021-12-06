@@ -81,11 +81,7 @@ const CheckBoxComponent = ({
           <Form.Item name={datum.fieldName} initialValue={datum.none}>
             <>
               {checkBoxLoader ? (
-                <Spin
-                  size="small"
-                  className="mr-10"
-                  indicator={<Loading3QuartersOutlined spin />}
-                />
+                <p>spinning....</p>
               ) : (
                 <Checkbox
                   onChange={(value: any) => {
