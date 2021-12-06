@@ -32,7 +32,7 @@
                              (loader/load :big #(reset! *loaded true))))}
       [:span "Load " [:strong "big"] " module"]]
      (if @*loaded
-       (let [comp @(resolve 'hello-world.big/app)] [:> comp])
+       (let [comp @(resolve 'hello-world.big/app)] [comp])
        [:p {:style {:margin "2em 0 0 2em"}}
         "placeholder"])]))
 

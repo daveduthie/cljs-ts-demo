@@ -4,8 +4,7 @@
 
 (defn app [_]
   [:div
-   [:p
-    [:> LibhunamComp {:msg "big"}]]])
+   [:> LibhunamComp {:msg "big"}]])
 
 (loader/set-loaded! :big)
 
