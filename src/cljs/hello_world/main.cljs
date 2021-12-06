@@ -22,11 +22,11 @@
      [:p "CLJS + TS Hello Worlds"]
      [:pre (with-out-str (pprint/pprint {:libhunan/fun (libhunam-fun)}))]
      [:> LibhunamComp {:msg "hello"}]
-     (:div {:style {:margin "1em 0 1em 0"}}
-           [:>
-            hunamSnackBar
-            {:copy  "We’ve just sent you an email to reset your password!",
-             :theme "green"}])
+     [:div {:style {:margin "1em 0 1em 0"}}
+      [:>
+       hunamSnackBar
+       {:copy  "We’ve just sent you an email to reset your password!",
+        :theme "green"}]]
      [:button {:on-click (fn [_]
                            (when-not @*loaded
                              (loader/load :big #(reset! *loaded true))))}
