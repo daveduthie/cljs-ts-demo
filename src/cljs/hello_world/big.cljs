@@ -1,13 +1,11 @@
 (ns hello-world.big
   (:require [cljs.loader :as loader]
-            [helix.core :refer [$ defnc]]
-            [helix.dom :as d]
             [libhunam :refer [Comp] :rename {Comp LibhunamComp}]))
 
-(defnc app [_]
-  (d/div
-   (d/p "Big App")
-   ($ LibhunamComp {:msg "big"})))
+(defn app [_]
+  [:div
+   [:p
+    [:> LibhunamComp {:msg "big"}]]])
 
 (loader/set-loaded! :big)
 

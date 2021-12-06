@@ -1,6 +1,6 @@
 {:paths   ["src/cljs" "resources" "target"]
- :aliases {:dev { :jvm-opts ["-XX:-OmitStackTraceInFastThrow"
-                             "-Dclojure.main.report=stderr"]}
+ :aliases {:dev {:jvm-opts ["-XX:-OmitStackTraceInFastThrow"
+                            "-Dclojure.main.report=stderr"]}
            :fig {:main-opts ["-m" "figwheel.main"]}}
 
  :deps {
@@ -11,8 +11,19 @@
                                          :sha     "092f1a85c75e57ff7f155b337fa1f71f338634e1"
                                          }
         com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
+        lifecheq/comp-cheq              {:mvn/version "0.7.1"}
         org.clojure/clojure             {:mvn/version "1.10.3"}
-        org.clojure/core.async          {:mvn/version "1.4.627"}
         org.clojure/clojurescript       {:mvn/version "1.10.893"}
-        lilactown/helix                 {:mvn/version "0.1.4"}
-        }}
+        org.clojure/core.async          {:mvn/version "1.4.627"}
+        re-frame/re-frame               {:mvn/version "1.2.0" }
+        }
+
+ ;; -----------------------------------------------------------------------------
+ ;; Maven repos, including deps.co private repos
+
+ :mvn/repos {"central"   {:url "https://repo1.maven.org/maven2/"},
+             "clojars"   {:url "https://clojars.org/repo"},
+             "releases"  {:url "https://repo.deps.co/lifecheq/releases"},
+             "snapshots" {:url "https://repo.deps.co/lifecheq/snapshots"}}
+
+ }
